@@ -5,7 +5,8 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var debug = require('debug')('healthy-living-for-kids:server');
 var http = require('http');
-var config = require('config')
+require('dotenv').config();
+var config = require('config');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
