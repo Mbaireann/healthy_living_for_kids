@@ -1,0 +1,12 @@
+{
+  "app":{
+    "port": 3000
+  },
+  "db":{
+    "port" :27017,
+    "host" : "mongodb",
+    "name": "",
+    "url": ""
+
+  }
+}
