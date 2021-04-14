@@ -1,6 +1,7 @@
 {
   "app": {
-    "port": "PORT"
+    "port": "PORT",
+    "jwt-token":"JWT_TOKEN"
   },
   "db": {
     "uri": "MONGO_URI"

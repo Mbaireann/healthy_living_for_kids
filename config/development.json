@@ -6,7 +6,6 @@
     "port" : 27017,
     "host" : "mongodb",
     "name": "" ,
-    "uri": ""
-
+    "uri": "mongodb://localhost:27017/healthy"
   }
 }
