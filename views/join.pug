@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  form(action="/biodata")
+    h6 Let's Determine your enerygy level'
+    p.fs-7 Let's get you registered
+    input.mb-2(type="text", name="email" placeholder="Email Address")/
+    .email.error
+    input.mb-2(type="password", name="password" placeholder="Password")/
+    .password.error
+    input.mb-2(type="password", name="cpassword" placeholder="Confirm Password")/
+    .password.error
+    button Create My Account
+    .fs-7.mt-2
+      small.mt-2.text-center By creating your account you agree with the Term of Use and our  privacy policies
+
+
+
+block scripts
+  script(src="/js/biodata.js")
+

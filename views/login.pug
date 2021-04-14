@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  form(action="/login")
+    h6 We Found You
+    p.fs-7 Access your account
+    label(for="email")
+    input.mb-2(type="text", name="email" placeholder="Email")/
+    .email.error
+    label(for="password")
+    input.mb-2(type="password", name="cpassword" placeholder="Password")/
+    .password.error
+    p.right Forgot Password
+    button Access My Account
+
+block scripts
+  script(src="/js/login.js")
+
