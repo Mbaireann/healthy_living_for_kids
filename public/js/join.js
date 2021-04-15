@@ -7,12 +7,13 @@ form.addEventListener("submit", async (e) => {
   emailError.textContent = "";
   passwordError.textContent = "";
   // get values
+  const fullname = form.fullname.value;
   const email = form.email.value;
   const password = form.password.value;
   try {
     const res = await fetch("/join", {
       method: "POST",
-      body: JSON.stringify({ email, password }),
+      body: JSON.stringify({ email, password,fullname }),
       headers: { "Content-Type": "application/json" },
     });
     const data = await res.json();
@@ -22,7 +23,7 @@ form.addEventListener("submit", async (e) => {
       passwordError.textContent = data.errors.password;
     }
     if (data.user) {
-      window.location.replace("/");
+      window.location.replace("/login");
     }
   } catch (err) {
     console.log(err);

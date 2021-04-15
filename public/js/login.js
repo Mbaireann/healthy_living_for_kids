@@ -22,7 +22,7 @@
         passwordError.textContent = data.errors.password;
       }
       if (data.user) {
-        location.assign('/');
+        location.assign('/biodata');
       }
     }
     catch (err) {

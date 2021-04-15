@@ -2,12 +2,12 @@ extends layout
 
 block content
   form(action="/checkaccount")
-    h6 Let's Access
-    p.fs-7 First lets check your account
+    h5 Let's Access
+    p.fs-6 First lets check your account
     label(for="email")
-    input#email(type="text", name="email" placeholder="Email address")/
+    input.form-control#email(type="text", name="email" placeholder="Email Address")/
     p.email.error
-    button Check My Email
+    button.btn Check My Email
 
 block scripts
   script(src="/js/checkaccount.js")
