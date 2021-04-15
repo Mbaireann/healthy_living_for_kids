@@ -1,9 +1,7 @@
-var createError = require("http-errors");
 var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
-var debug = require("debug")("healthy-living-for-kids:server");
 var http = require("http");
 require("dotenv").config();
 var config = require("config");
@@ -24,7 +22,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use('*', checkUser)
+app.use('*', checkUser);
 app.use("/", indexRouter);
 app.use("/smothies", requireAuth,(res,req)=>{res.render('smoothies')})
 
@@ -68,6 +66,7 @@ mongoose
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
+    useFindAndModify:true
   })
   .then((result) => {
     server.listen(port);
