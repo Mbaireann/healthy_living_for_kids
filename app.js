@@ -9,6 +9,7 @@ const mongoose = require("mongoose");
 const { requireAuth, checkUser } = require("./middlewares/auth.middleware");
 
 var indexRouter = require("./routes/index");
+var foodRouter = require("./routes/food");
 
 var app = express();
 
@@ -22,9 +23,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
+app.use("/food",foodRouter)
 app.use('*', checkUser);
 app.use("/", indexRouter);
-app.use("/smothies", requireAuth,(res,req)=>{res.render('smoothies')})
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

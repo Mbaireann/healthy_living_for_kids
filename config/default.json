@@ -1,13 +1,12 @@
 {
-  "app":{
+  "app": {
     "port": 3000,
     "jwt-token": "Helloworldtoken"
   },
-  "db":{
-    "port" : 27017,
-    "host" : "mongodb",
+  "db": {
+    "port": 27017,
+    "host": "mongodb",
     "name": "",
-    "uri": ""
-
+    "uri": "mongodb+srv://api:**api**@cluster0.eqxmc.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
   }
 }
