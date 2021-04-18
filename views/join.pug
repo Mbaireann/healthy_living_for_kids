@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  form(action="/join")
+    h5 Let's get you an account
+    p.fs-6.mb-4 Let's get you registered
+    input.mb-2.form-control(type="text", name="fullname" placeholder="Full Names")/
+    .email.error
+    input.mb-2.form-control(type="text", name="email" placeholder="Email Address")/
+    .email.error
+    input.mb-2.form-control(type="password", name="password" placeholder="Password")/
+    .password.error
+    input.mb-4.form-control(type="password", name="cpassword" placeholder="Confirm Password")/
+    .password.error
+    button.btn.btn-sm.mt-2 Create My Account
+    .fs-7.mt-2.text-center
+      small.mt-2.text-center By creating your account you agree with the Term of Use and our  privacy policies
+
+
+
+block scripts
+  script(src="/js/join.js")
+

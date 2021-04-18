@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  form(action="/checkaccount")
+    h5 Let's Access
+    p.fs-6 First lets check your account
+    label(for="email")
+    input.form-control#email(type="text", name="email" placeholder="Email Address")/
+    p.email.error
+    button.btn Check My Email
+
+block scripts
+  script(src="/js/checkaccount.js")
+

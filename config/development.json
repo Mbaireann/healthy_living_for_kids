@@ -5,8 +5,7 @@
   "db":{
     "port" : 27017,
     "host" : "mongodb",
-    "name": "" ,
-    "uri": ""
-
+    "name": "healthy" ,
+    "uri": "mongodb://localhost:27017/healthy"
   }
 }

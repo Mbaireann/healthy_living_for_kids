@@ -1,0 +1,17 @@
+
+*{
+  @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:ital,wght@0,100;1,100&display=swap');
+}
+body {
+  padding-top: 50%;
+  padding-left: 30px;
+  /* font-family: 'Open Sans', sans-serif; */
+  font-family: 'Roboto', sans-serif;
+
+}
+.fs-7{
+  font-size:.8rem;
+}
+a {
+  color: #00B7FF;
+}
