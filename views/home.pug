@@ -1,4 +1,71 @@
 extends layout
 
 block content
-  p  this is home
+  h5 Hi #{doc.fullname}
+  p.fs-6 Need help?
+  input.form-control(type="text" placeholder="What is in your diet today? ")
+  h5.mt-2 Track your record
+  p.fs-6 Today,#{new Date().getDate()} April #{new Date().getFullYear()}
+  .p-12
+    h2 776
+      span.fs-6.px-2 Cal
+      | of #{doc.bmr}
+      span.fs-6.px-2 cal
+  .row
+    .col
+      h3 300
+      p.fs-7 Carbs (55%)
+    .col
+      h3 200
+      p.fs-7 Protein (55%)
+    .col
+      h3 400
+      p.fs-7 Fats (55%)
+
+    hr
+    .row
+      .col-2.text-center
+        img.rounded(src="https://picsum.photos/40", alt="", srcset="")
+      .col-8
+        h6.mb-0 Breakfast
+        p.fs-7.mb-1 Bologna Sandwitch
+      .col-2
+        h6.mb-0 500
+        p.fs-7.text-capitalize.mb-0 CAL
+        span.fs-7 &#8594
+    hr
+    .row
+      .col-2.text-center
+        img.rounded(src="https://picsum.photos/40", alt="", srcset="")
+      .col-8
+        h6.mb-0 Lunch
+        p.fs-7.mb-1 Fried Meat
+      .col-2
+        h6.mb-0 500
+        p.fs-7.text-capitalize.mb-0 CAL
+        span.fs-7 &#8594
+    hr
+    .row
+      .col-2.text-center
+        img.rounded(src="https://picsum.photos/40", alt="", srcset="")
+      .col-8
+        h6.mb-0 Breakfast
+        p.fs-7.mb-1 Apple Cucumber
+      .col-2
+        h6.mb-0 500
+        p.fs-7.text-capitalize.mb-0 CAL
+        span.fs-7 &#8594
+    hr
+    nav.navbar.justify-content-around
+      ul.nav
+        a.nav-link.fs-7.px-2( href="/home") Home
+      ul.nav
+        a.nav-link.disabled.fs-7.px-2(href="#") Meals
+      ul.nav
+        a.nav-link.disabled.fs-7.px-2( href="#") &#x2b;
+      ul.nav
+        a.nav-link.disabled.fs-7.px-2( href="#") Exercise
+      ul.nav
+        a.nav-link.fs-7.px-2( href="/logout") Logout
+
+

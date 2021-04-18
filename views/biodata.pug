@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  form(action="/biodata" method="POST")
+    h5 Let us determine your daily energy requirement
+    p.fs-6 This is the number of calories that is required to keep our body functoning at rest
+    .input-group.mb-3
+      input.form-control(type="text" name="weight" placeholder="Weight" required)
+      span.input-group-text kg
+    .input-group.mb-3
+      input.form-control(type="text" name="height" placeholder="Height" required)
+      span.input-group-text cm
+    .input-group.mb-3
+      label.form-check-label.pe-2.pb-1.fs-7(for="dob" style="width:100%") Date of Birth
+      input.form-control#dob(type="date", name="dob" placeholder="Date of birth" required)
+    .mb-3
+      p.fs-7.mb-1 Gender
+      label.form-check-label.pe-2.mb-1.fs-7(for="male") Male
+      input.form-check-input.me-2(type="radio" value="M" name="gender" id="gender" required)
+      label.form-check-label.pe-2.fs-7(for="female") Female
+      input.form-check-input.ml-3(type="radio" value="F" name="gender" id="gender" required)
+    button.btn(type="submit") Calculate
+

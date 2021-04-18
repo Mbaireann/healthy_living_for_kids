@@ -15,7 +15,6 @@ const requireAuth = (req, res, next) => {
       console.log(err.message);
       res.redirect("/checkaccount");
     } else {
-      console.log("decoded", decodedToken);
       next();
     }
   });
