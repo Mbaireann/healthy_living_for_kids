@@ -1,4 +1,4 @@
-const User = require("../models/User");
+const User = require("../models/User.model");
 
 module.exports.saveBioData = async (req, res, next) => {
   let email = res.locals.user.email;
