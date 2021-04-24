@@ -12,6 +12,7 @@ const { requireAuth, checkUser } = require("./middlewares/auth.middleware");
 //Routes
 var indexRouter = require("./routes/index");
 var foodRouter = require("./routes/food.routes");
+var mealRouter = require("./routes/meal.routes");
 
 var app = express();
 
@@ -27,6 +28,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use('*', checkUser);
 app.use("/food",foodRouter)
+app.use("/meal",mealRouter)
 app.use("/", indexRouter);
 
 
@@ -63,7 +65,7 @@ app.set("port", port);
 var server = http.createServer(app);
 
 /**
- * Listen on provided port, on all network interfaces.
+ * Connecting to MongoDB.
  */
 mongoose
   .connect(config.get("db.uri"), {
