@@ -67,6 +67,28 @@ input.form-control::placeholder {
   color: white;
   font-weight: 500;
 }
+
+.fl-right{
+  float: right;
+
+}
+
+
+py-0{
+  padding-top:0px;
+  padding-bottom: 0px;
+}
+
+.fl-left{
+  float: left;
+}
+
+.ml-auto{
+  margin-left: auto;
+}
+.page-link {
+    padding: .2rem .75rem;
+}
 .phone {
   max-width: 375px;
   height: 100vw;

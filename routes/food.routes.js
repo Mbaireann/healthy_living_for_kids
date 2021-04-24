@@ -1,5 +1,4 @@
 const express = require("express");
-const { route } = require(".");
 const foodController = require("../controller/food.controller");
 
 const router = express.Router();

@@ -1,0 +1,88 @@
+extends layout
+
+block content
+  h5.fs-7 Add meal
+  p.food_name Cabbage
+
+  hr
+
+  .row.mb-2
+    .col-6
+      p.fs-7 Amount in grams
+    .col-6
+      input#Amount.fl-right.form-control(type="number", name="" size="10" value="1")
+  .row
+    .col-6
+      p.fs-7 Serving size
+    .col-6
+      p.fs-7.fl-right 1 cup is 128g
+  hr
+
+
+  form(action="/meal/create" method="POST" )
+    input(type="hidden", name="user_id" value=`${user_id}`)
+    input(type="hidden", name="food_id" value=`${id}`)
+    input.meal_factor(type="hidden", name="meal_quantity" value="1")
+    ul#nutrients.list-group
+      li.list-group-item.d-flex.justify-content-between
+        p.mb-0 calories
+        span#calories.fl-right 4
+        input(type="hidden", name="calories")
+      li.list-group-item.d-flex.justify-content-between
+        p.mb-0 carbs
+        span#carbs.fl-right 4
+        input(type="hidden", name="carbs")
+
+      li.list-group-item.d-flex.justify-content-between
+        p.mb-0 energy with dietary fibre
+        span#energy_with_dietary_fibre.fl-right 4
+        input(type="hidden", name="energy_with_dietary_fibre")
+
+      li.list-group-item.d-flex.justify-content-between
+        p.mb-0 protein
+        span#protein.fl-right 4
+        input(type="hidden", name="protein")
+
+      li.list-group-item.d-flex.justify-content-between
+        p.mb-0 starch
+        span#starch.fl-right 4
+        input(type="hidden", name="starch")
+
+      li.list-group-item.d-flex.justify-content-between
+        p.mb-0 total fat
+        span#total_fat.fl-right 4
+        input(type="hidden", name="total_fat")
+
+      li.list-group-item.d-flex.justify-content-between
+        p.mb-0 total sugars
+        span#total_sugars.fl-right 4
+        input(type="hidden", name="total_sugars")
+
+
+
+    p.mt-2 When did you take the meal
+
+    .d-flex.justify-content-between
+      .form-check
+        input.form-check-input(type="radio" name="meal_category" value="BREAKFAST")
+        label.form-check-label Breakfast
+      .form-check
+        input.form-check-input(type="radio" name="meal_category" value="LUNCH")
+        label.form-check-label Lunch
+      .form-check
+        input.form-check-input(type="radio" name="meal_category" value="DINNER")
+        label.form-check-label Dinner
+
+    p.mt-2 Which category is your meal
+    input(type="datetime-local" style="width:100%;" name="meal_date")
+
+    button.mt-4.form-control.fs-7(type="submit") Add meal
+
+
+
+  include footer
+block scripts
+  script(src="/js/createMeal.js")
+
+
+

@@ -1,5 +1,4 @@
-const { isValidObjectId } = require("mongoose");
-const Food = require("../models/Food.models");
+const Food = require("../models/Food.model");
 
 module.exports = {
   async createFood(req, res, next) {
@@ -61,7 +60,7 @@ module.exports = {
 
   async findFoodById(req, res) {
     let { id } = req.params;
-    let food = await Food.findOne(id);
+    let food = await Food.findById(id);
     res.status(200).json(food);
   },
 
