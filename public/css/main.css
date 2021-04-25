@@ -9,7 +9,9 @@ body {
   font-family: "Roboto", sans-serif;
   background-color: black;
 }
-
+a:hover {
+    color: white;
+}
 img-pad{
 
     padding-right: 22px;

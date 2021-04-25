@@ -7,62 +7,73 @@ block content
   a.text-decoration-none(href="/food/search")
     input.form-control(type="text" placeholder="What is in your diet today? ")
   h5.mt-4 Track your record
-  p.fs-7 Select Date
+  p.fs-7 Select Date to view your progress
   input#mydate.form-control(type="date", name="date" )
-  .p-12
-    h2
-      span#calories 776
-      span.fs-6.px-2 Cal of
-      | #{doc.bmr}
-      span.fs-6.px-2 cal
-  .row
-    .col
-      h3#carbs 300
-      p.fs-7 Carbs
-    .col
-      h3#protein 200
-      p.fs-7 Protein
-    .col
-      h3#fats 400
-      p.fs-7 Fats
+  #data_present
+    .p-12
+      h2
+        span#calories 776
+        span.fs-6.px-2 Cal of
+        | #{doc.bmr}
+        span.fs-6.px-2 cal
+    .row
+      .col
+        h3#carbs 300
+        p.fs-7 Carbs
+      .col
+        h3#protein 200
+        p.fs-7 Protein
+      .col
+        h3#fats 400
+        p.fs-7 Fats
 
-    hr
-    .row
-      .col-2.text-center
-        img.rounded.img-pad(src="/images/br2.jfif", alt="", srcset="" width="100%")
-      .col-8
-        h6.mb-0 Breakfast
-        p#breakfast_foods.fs-7.mb-1 Bologna Sandwitch
-      .col-2
-        h6#breakfast.mb-0 500
-        p.fs-7.text-capitalize.mb-0 CAL
-        a.text-decoration-none(href="/meal/category")
-          span.fs-7 &#8594
-    hr
-    .row
-      .col-2.text-center
-        img.rounded.img-pad(src="/images/ln2.jfif", alt="", srcset="" width="100%")
-      .col-8
-        h6.mb-0 Lunch
-        p#lunch_foods.fs-7.mb-1 Fried Meat
-      .col-2
-        h6#lunch.mb-0 500
-        p.fs-7.text-capitalize.mb-0 CAL
-        a.text-decoration-none(href="/meal/category")
-          span.fs-7 &#8594
-    hr
-    .row
-      .col-2.text-center
-        img.rounded.img-pad(src="/images/dn2.jfif", alt="", srcset="" width="100%")
-      .col-8
-        h6.mb-0 Dinner
-        p#dinner_foods.fs-7.mb-1 Apple Cucumber
-      .col-2
-        h6#dinner.mb-0 500
-        p.fs-7.text-capitalize.mb-0 CAL
-        a.text-decoration-none(href="/meal/category")
-          span.fs-7 &#8594
-    hr
+      hr
+      .row
+        .col-2.text-center
+          img.rounded.img-pad(src="/images/br2.jfif", alt="", srcset="" width="100%")
+        .col-8
+          h6.mb-0 Breakfast
+          p#breakfast_foods.fs-7.mb-1 Bologna Sandwitch
+        .col-2
+          h6#breakfast.mb-0 500
+          p.fs-7.text-capitalize.mb-0 CAL
+          a.text-decoration-none(href="/meal/category")
+            span.fs-7 &#8594
+      hr
+      .row
+        .col-2.text-center
+          img.rounded.img-pad(src="/images/ln2.jfif", alt="", srcset="" width="100%")
+        .col-8
+          h6.mb-0 Lunch
+          p#lunch_foods.fs-7.mb-1 Fried Meat
+        .col-2
+          h6#lunch.mb-0 500
+          p.fs-7.text-capitalize.mb-0 CAL
+          a.text-decoration-none(href="/meal/category")
+            span.fs-7 &#8594
+      hr
+      .row
+        .col-2.text-center
+          img.rounded.img-pad(src="/images/dn2.jfif", alt="", srcset="" width="100%")
+        .col-8
+          h6.mb-0 Dinner
+          p#dinner_foods.fs-7.mb-1 Apple Cucumber
+        .col-2
+          h6#dinner.mb-0 500
+          p.fs-7.text-capitalize.mb-0 CAL
+          a.text-decoration-none(href="/meal/category")
+            span.fs-7 &#8594
+      hr
+  #no_data_present.text-center
+    img.mt-2.img-pad(src="/images/empty.gif", alt="", srcset="" width="100%" height="200px")
+    h6.mb-5 Looks like you do not have an entry
+    h6.mb-5
+      a.text-decoration-none.badge.rounded-pill.bg-primary.p-3(href="/food/search") Add food
+    .c(style="height:100px")
+
+
+
+
 
 
 block scripts
