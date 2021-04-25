@@ -3,13 +3,17 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 var http = require("http");
-require("dotenv").config();
+require("dotenv").config(); //load environment variables
 var config = require("config");
 const mongoose = require("mongoose");
 const { requireAuth, checkUser } = require("./middlewares/auth.middleware");
 
+
+//Routes
 var indexRouter = require("./routes/index");
-var foodRouter = require("./routes/food");
+var foodRouter = require("./routes/food.routes");
+var mealRouter = require("./routes/meal.routes");
+var exercisesRouter = require("./routes/exercises.routes");
 
 var app = express();
 
@@ -18,13 +22,15 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
 
 app.use(logger("dev"));
-app.use(express.json());
+app.use(express.json({limit: '50mb'}));
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use("/food",foodRouter)
 app.use('*', checkUser);
+app.use("/food",foodRouter)
+app.use("/meal",mealRouter)
+app.use("/exercises",exercisesRouter)
 app.use("/", indexRouter);
 
 
@@ -61,7 +67,7 @@ app.set("port", port);
 var server = http.createServer(app);
 
 /**
- * Listen on provided port, on all network interfaces.
+ * Connecting to MongoDB.
  */
 mongoose
   .connect(config.get("db.uri"), {

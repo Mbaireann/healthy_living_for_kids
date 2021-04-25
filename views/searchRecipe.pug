@@ -1,0 +1,36 @@
+extends layout
+
+block content
+  input#user_id(type="hidden", name="user_id" value=`${doc._id}`)
+  input#bmr(type="hidden", name="bmr" value=`${doc.bmr}`)
+  h5 Search Recipe
+
+  form.d-flex(action="/meal/recipe" method="POST")
+    input.form-control.pe-2(type="text" name="search_text" id="search_text" placeholder="eg. Chicken tikka" required)
+    button.btn(type:submit style="width:22%")#submit Search
+  if data
+    each val,key in data
+      .card.mt-2(style='width: 20rem;')
+        img.card-img-top(src=`${val.recipe.image}` alt='...')
+        .card-body
+          h5.card-title #{val.recipe.label}
+          p.card-text
+            .row
+              .col
+                p.fs-7 Calories #{Math.floor(val.recipe.calories)}
+              .col
+                p.fs-7.pe-2 Serivng Size #{val.recipe.yield}
+            .row
+              .col
+                p.fs-7 Ingridients #{val.recipe.ingredients.length}
+              .col
+                p.fs-7 Total time #{val.recipe.totalTime}
+
+          a.btn.btn-primary.text-decoration-none(href=`/meal/recipe/${val.recipe.uri.substr(val.recipe.uri.indexOf("#")+1,val.recipe.uri.length)}`) try recipe
+  else
+    p.fs-7 Type the meal you would like on search box to access over 20,000 recipes
+  hr
+
+block scripts
+  script(src="/js/searchRecipe.js")
+

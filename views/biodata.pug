@@ -2,8 +2,8 @@ extends layout
 
 block content
   form(action="/biodata" method="POST")
-    h5 Let us determine your daily energy requirement
-    p.fs-6 This is the number of calories that is required to keep our body functoning at rest
+    h5(style="font-weight:600;") Let us determine your daily energy requirement
+    p.fs-7.text-muted This is the number of calories that is required to keep our body functioning at rest.
     .input-group.mb-3
       input.form-control(type="text" name="weight" placeholder="Weight" required)
       span.input-group-text kg

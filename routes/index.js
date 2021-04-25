@@ -2,7 +2,6 @@ var express = require("express");
 var router = express.Router();
 const authController = require("../controller/auth.controller");
 const userController = require("../controller/user.controller");
-const foodController = require("../controller/food.controller");
 
 const { requireAuth } = require("../middlewares/auth.middleware");
 
@@ -33,28 +32,21 @@ router.get("/", function (req, res, next) {
 });
 /* GET home page. */
 router.get("/home", requireAuth, function (req, res, next) {
-  if(res.locals.user.hasBmr){
-
-  res.render("home", { doc: res.locals.user });
-  }else{
-
-  res.redirect('/biodata');
+  if (res.locals.user.hasBmr) {
+    res.render("home", { doc: res.locals.user });
+  } else {
+    res.redirect("/biodata");
   }
 });
 /* GET home page. */
 router.get("/biodata", requireAuth, function (req, res, next) {
-  console.log(res.locals.user.hasBmr)
-  res.locals.user.hasBmr =false
-  if(!res.locals.user.hasBmr){
-
-  res.render("biodata");
-  }else{
-    res.redirect('/home')
+  console.log(res.locals.user.hasBmr);
+  if (!res.locals.user.hasBmr) {
+    res.render("biodata");
+  } else {
+    res.redirect("/home");
   }
 });
 router.post("/biodata", userController.saveBioData);
-router.post("/food/create", foodController.createFood);
-router.get("/food/all", foodController.findAllFood);
-
 
 module.exports = router;

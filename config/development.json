@@ -6,6 +6,6 @@
     "port" : 27017,
     "host" : "mongodb",
     "name": "healthy" ,
-    "uri": "mongodb://localhost:27017/healthy"
+    "uri": "mongodb+srv://api:**api**@cluster0.eqxmc.mongodb.net/healthy?retryWrites=true&w=majority"
   }
 }

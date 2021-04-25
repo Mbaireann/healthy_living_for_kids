@@ -1,4 +1,4 @@
-const User = require("../models/User");
+const User = require("../models/User.model");
 
 module.exports.saveBioData = async (req, res, next) => {
   let email = res.locals.user.email;
@@ -10,7 +10,13 @@ module.exports.saveBioData = async (req, res, next) => {
   try {
     await User.findOneAndUpdate(
       { email },
-      { weight: w, height: h, gender: gender, birthday: new Date(dob) , hasBmr: true}
+      {
+        weight: w,
+        height: h,
+        gender: gender,
+        birthday: new Date(dob),
+        hasBmr: true,
+      }
     );
 
     let doc = await User.findOne({ email });
@@ -22,3 +28,16 @@ module.exports.saveBioData = async (req, res, next) => {
     console.log(err);
   }
 };
+
+module.exports.getUserStats = async (req, res) => {
+  let { id } = req.params;
+
+  const foundUser = User.findById(id);
+
+  if (!foundUser) {
+    res.status(400).json({ msg: "User not found" });
+  }
+
+
+};
+

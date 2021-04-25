@@ -3,8 +3,8 @@ extends layout
 block content
   .top
   form(action="/checkaccount")
-    h5 Let's Access
-    p.fs-6 First lets check your account
+    h5(style="font-weight:700;") Let's Access
+    p.fs-7.text-muted First, let us check your account
     label(for="email")
     input.form-control#email(type="text", name="email" placeholder="Email Address")/
     p.email.error
