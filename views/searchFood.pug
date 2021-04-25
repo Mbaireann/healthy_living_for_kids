@@ -1,16 +1,15 @@
 extends layout
 
 block content
-  h5 Seach Food to Track
-  p.fs-7 Select one food from the list
+  h5(style="font-weight:500;") Seach Food to Track
+  p.fs-7.text-muted Select one food from the list
   #Foods
-    input.form-control.search(type="text" placeholder="What is in your diet today? ")
+    input.form-control.search(type="text" placeholder="What is in your diet today? eg cheese ")
     ul.list.list-group.mt-2
     ul.pagination
 
 
 
-  include footer
 block scripts
   script(src="/js/searchFoodList.js")
 

@@ -8,7 +8,7 @@ router.get("/create/:id", (req, res) => {
   let { id } = req.params;
   let { user } = res.locals;
 
-  res.render("createMeal", { id: id, user_id: user._id });
+  res.render("createMeal", {doc: res.locals.user ,id: id, user_id: user._id });
 });
 router.post("/create", mealController.createMeal);
 

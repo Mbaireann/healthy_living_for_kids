@@ -1,8 +1,8 @@
 extends layout
 
 block content
-  h5.fs-7 Add meal
-  p.food_name Cabbage
+  h5.fs-7.text-muted Add meal
+  p.food_name(style="font-weight:500;") Cabbage
 
   hr
 
@@ -60,27 +60,26 @@ block content
 
 
 
-    p.mt-2 When did you take the meal
+    p.mt-2.fs-7 Which type of meal did you eat ?
 
     .d-flex.justify-content-between
       .form-check
-        input.form-check-input(type="radio" name="meal_category" value="BREAKFAST")
+        input.form-check-input(type="radio" name="meal_category" value="BREAKFAST" required)
         label.form-check-label Breakfast
       .form-check
-        input.form-check-input(type="radio" name="meal_category" value="LUNCH")
+        input.form-check-input(type="radio" name="meal_category" value="LUNCH" required)
         label.form-check-label Lunch
       .form-check
-        input.form-check-input(type="radio" name="meal_category" value="DINNER")
+        input.form-check-input(type="radio" name="meal_category" value="DINNER" required)
         label.form-check-label Dinner
 
-    p.mt-2 Which category is your meal
-    input(type="datetime-local" style="width:100%;" name="meal_date")
+    p.mt-2.fs-7 When did you eat it ?
+    input(type="datetime-local" style="width:100%;" name="meal_date" required)
 
-    button.mt-4.form-control.fs-7(type="submit") Add meal
+    button.btn.mt-4.form-control.fs-7(type="submit") Add meal
 
 
 
-  include footer
 block scripts
   script(src="/js/createMeal.js")
 

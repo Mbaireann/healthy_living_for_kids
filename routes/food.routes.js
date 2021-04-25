@@ -10,7 +10,7 @@ router.get("/all/:id", foodController.findFoodById);
 router.delete("/single/:id", foodController.deleteFoodById)
 
 router.get("/search",(req,res)=>{
-  res.render("searchFood");
+  res.render("searchFood", { doc: res.locals.user });
 })
 
 
