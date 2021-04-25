@@ -1,0 +1,36 @@
+extends layout
+
+block content
+  input#user_id(type="hidden", name="user_id" value=`${doc._id}`)
+  input#bmr(type="hidden", name="bmr" value=`${doc.bmr}`)
+  h5 Bodyweight Exercise to get you in shape
+
+
+  .card.mt-2(style='width: 20rem;')
+    img.card-img-top(src="/images/lunges.gif" alt='...')
+    .card-body
+      h5.card-title Lunges
+      p.card-text
+        .row
+          .col
+            p.fs-7 Complete 10 reps for 3 sets
+        p Challenging your balance is an essential part of a well-rounded exercise routine. Lunges do just that, promoting functional movement, while also increasing strength in your legs and glutes.
+  .card.mt-2(style='width: 20rem;')
+    img.card-img-top(src="/images/pushup.gif" alt='...')
+    .card-body
+      h5.card-title Pushups
+      p.card-text
+        .row
+          .col
+            p.fs-7 Complete 10 reps for 3 sets
+        p Traditional pushups are beneficial for building upper body strength. They work the triceps, pectoral muscles, and shoulders. When done with proper form, they can also strengthen the lower back and core by engaging (pulling in) the abdominal muscles. Pushups are a fast and effective exercise for building strength.
+
+
+
+
+
+  hr
+
+block scripts
+  script(src="/js/searchRecipe.js")
+

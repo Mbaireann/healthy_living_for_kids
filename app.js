@@ -13,6 +13,7 @@ const { requireAuth, checkUser } = require("./middlewares/auth.middleware");
 var indexRouter = require("./routes/index");
 var foodRouter = require("./routes/food.routes");
 var mealRouter = require("./routes/meal.routes");
+var exercisesRouter = require("./routes/exercises.routes");
 
 var app = express();
 
@@ -29,6 +30,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use('*', checkUser);
 app.use("/food",foodRouter)
 app.use("/meal",mealRouter)
+app.use("/exercises",exercisesRouter)
 app.use("/", indexRouter);
 
 
