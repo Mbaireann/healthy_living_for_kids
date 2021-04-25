@@ -1,12 +1,12 @@
 window.addEventListener("load", async (event) => {
   let user_id = document.getElementById("user_id").value;
   const res = await fetch(
-    `/meal/${user_id}/stats/2021-04-24T05:40:59.302+00:00`
+    `/meal/${user_id}/stats/2021-04-25T11:21:57.596Z`
   );
   let nutrients = await res.json();
 
   const res2 = await fetch(
-    `/meal/${user_id}/stats/meal_category/2021-04-24T05:40:59.302+00:00`
+    `/meal/${user_id}/stats/meal_category/2021-04-25T11:21:57.596Z`
   );
   let meal_category = await res2.json();
 

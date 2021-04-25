@@ -41,7 +41,6 @@ router.get("/home", requireAuth, function (req, res, next) {
 /* GET home page. */
 router.get("/biodata", requireAuth, function (req, res, next) {
   console.log(res.locals.user.hasBmr);
-  res.locals.user.hasBmr = false;
   if (!res.locals.user.hasBmr) {
     res.render("biodata");
   } else {
