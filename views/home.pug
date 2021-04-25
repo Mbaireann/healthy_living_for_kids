@@ -7,7 +7,8 @@ block content
   a.text-decoration-none(href="/food/search")
     input.form-control(type="text" placeholder="What is in your diet today? ")
   h5.mt-2 Track your record
-  p.fs-6 Today,#{new Date().getDate()} April #{new Date().getFullYear()}
+  p.fs-7 Select Date
+  input#mydate.form-control(type="date", name="date" )
   .p-12
     h2
       span#calories 776
@@ -17,13 +18,13 @@ block content
   .row
     .col
       h3#carbs 300
-      p.fs-7 Carbs (55%)
+      p.fs-7 Carbs
     .col
       h3#protein 200
-      p.fs-7 Protein (55%)
+      p.fs-7 Protein
     .col
       h3#fats 400
-      p.fs-7 Fats (55%)
+      p.fs-7 Fats
 
     hr
     .row
@@ -31,45 +32,39 @@ block content
         img.rounded(src="https://picsum.photos/40", alt="", srcset="")
       .col-8
         h6.mb-0 Breakfast
-        p.fs-7.mb-1 Bologna Sandwitch
+        p#breakfast_foods.fs-7.mb-1 Bologna Sandwitch
       .col-2
         h6#breakfast.mb-0 500
         p.fs-7.text-capitalize.mb-0 CAL
-        span.fs-7 &#8594
+        a.text-decoration-none(href="/meal/category")
+          span.fs-7 &#8594
     hr
     .row
       .col-2.text-center
         img.rounded(src="https://picsum.photos/40", alt="", srcset="")
       .col-8
         h6.mb-0 Lunch
-        p.fs-7.mb-1 Fried Meat
+        p#lunch_foods.fs-7.mb-1 Fried Meat
       .col-2
         h6#lunch.mb-0 500
         p.fs-7.text-capitalize.mb-0 CAL
-        span.fs-7 &#8594
+        a.text-decoration-none(href="/meal/category")
+          span.fs-7 &#8594
     hr
     .row
       .col-2.text-center
         img.rounded(src="https://picsum.photos/40", alt="", srcset="")
       .col-8
         h6.mb-0 Dinner
-        p.fs-7.mb-1 Apple Cucumber
+        p#dinner_foods.fs-7.mb-1 Apple Cucumber
       .col-2
         h6#dinner.mb-0 500
         p.fs-7.text-capitalize.mb-0 CAL
-        span.fs-7 &#8594
+        a.text-decoration-none(href="/meal/category")
+          span.fs-7 &#8594
     hr
-    nav.navbar.justify-content-around
-      ul.nav
-        a.nav-link.fs-7.px-2( href="/home") Home
-      ul.nav
-        a.nav-link.disabled.fs-7.px-2(href="#") Meals
-      ul.nav
-        a.nav-link.disabled.fs-7.px-2( href="#") &#x2b;
-      ul.nav
-        a.nav-link.disabled.fs-7.px-2( href="#") Exercise
-      ul.nav
-        a.nav-link.fs-7.px-2( href="/logout") Logout
+
+
 block scripts
   script(src="/js/home.js")
 
