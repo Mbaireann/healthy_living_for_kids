@@ -20,7 +20,7 @@ window.addEventListener("load", async (event) => {
 
   food_name.innerText = values.food_name;
   amount.addEventListener("keyup", (e) => {
-    let amnt = e.target.value /100;
+    let amnt = e.target.value / 100;
 
     Object.keys(values).forEach((v) => {
       if (document.getElementById(v) != null) {
