@@ -11,7 +11,12 @@ body {
 .fs-7 {
   font-size: 0.8rem;
 }
-
+.w-full{
+  width: 100%;
+}
+text-bold{
+  font-weight:900;
+}
 .form-control {
   border: 1px;
   background-color: #eeeeee;
