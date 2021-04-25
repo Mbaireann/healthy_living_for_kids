@@ -124,7 +124,7 @@ module.exports = {
     }
   },
   async getUserMealCategoryByDate(req, res) {
-    let { user_id, meal_category, date } = req.params;
+    let { user_id, date } = req.params;
 
     let day = new Date(date).getDate();
     let month = new Date(date).getMonth() + 1;
@@ -167,10 +167,12 @@ module.exports = {
         },
       },
       {
-        from: "foods",
-        localField: "food_id",
-        foreignField: "_id",
-        as: "food_name",
+        $lookup: {
+          from: "foods",
+          localField: "food_id",
+          foreignField: "_id",
+          as: "food_name",
+        },
       },
       {
         $group: {
