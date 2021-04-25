@@ -41,7 +41,7 @@ input.form-control::placeholder {
   width: 100%;
 }
 ::-webkit-datetime-edit-text {
-  color: red;
+  /* color: red; */
   padding: 0 0.8em;
 }
 ::-webkit-datetime-edit-month-field {
@@ -91,7 +91,7 @@ py-0{
 }
 .phone {
   max-width: 375px;
-  height: 100vw;
+  min-height: 100vw;
   /* border:1px solid red; */
   padding: 1.5rem;
   margin: 0 auto;
